@@ -4,13 +4,24 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Calc 1 Quiz Pack — MathJax (Light Mode)</title>
+
+  <!-- ✅ MathJax configuration -->
   <script>
-    window.MathJax = {
-      tex: { inlineMath: [['\\(','\\)'], ['$', '$']], displayMath: [['\\[','\\]']] },
-      svg: { fontCache: 'global' }
-    };
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)'], ['$', '$']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true
+    },
+    svg: { fontCache: 'global' }
+  };
   </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <!-- ✅ Reliable MathJax build for GitHub Pages -->
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
   <style>
     :root{--bg:#fff;--fg:#101418;--muted:#5a646e;--border:#e6e8eb;--card:#fafbfc;--box:#111}
     *{box-sizing:border-box}
@@ -40,6 +51,7 @@
     @media print{.page{margin:.2in auto;padding:.25in .35in}.btns{display:none}a{text-decoration:none;color:inherit}}
   </style>
 </head>
+
 <body>
   <div class="page" id="page1">
     <h1>Calc 1 — Rule Sheet (MathJax)</h1>
@@ -49,15 +61,15 @@
     <h2>From Your Notes (core facts)</h2>
     <div class="note">
       <ul>
-        <li>Power: \\((x^n)'=n x^{n-1}\\).</li>
-        <li>Exponential: \\((e^{rx})'=r e^{rx}\\), \\((a^x)'=a^x\\ln a\\).</li>
-        <li>Trig: \\((\\sin x)'=\\cos x\\), \\((\\cos x)'=-\\sin x\\), \\((\\tan x)'=\\sec^2 x\\).</li>
-        <li>Inverse trig: \\((\\tan^{-1}x)'=\\dfrac{1}{1+x^2}\\).</li>
-        <li>Log: \\((\\ln x)'=\\dfrac{1}{x}\\), and \\((\\ln(ax))'=\\dfrac{1}{x}\\) for \\(a>0\\).</li>
-        <li>Linear combos: \\((f+g)'=f'+g'\\), \\((c f)'=c f'\\).</li>
-        <li><b>Product:</b> \\((fg)'=f'g+fg'\\).</li>
-        <li><b>Quotient:</b> \\(\\left(\\dfrac{f}{g}\\right)'=\\dfrac{f'g-fg'}{g^2}\\).</li>
-        <li><b>Chain:</b> \\((f\\circ g)'=f'(g(x))\\,g'(x)\\).</li>
+        <li>Power: \( (x^n)'=n x^{n-1} \).</li>
+        <li>Exponential: \( (e^{rx})'=r e^{rx} \), \( (a^x)'=a^x\ln a \).</li>
+        <li>Trig: \( (\sin x)'=\cos x \), \( (\cos x)'=-\sin x \), \( (\tan x)'=\sec^2 x \).</li>
+        <li>Inverse trig: \( (\tan^{-1}x)'=\dfrac{1}{1+x^2} \).</li>
+        <li>Log: \( (\ln x)'=\dfrac{1}{x} \), and \( (\ln(ax))'=\dfrac{1}{x} \) for \( a>0 \).</li>
+        <li>Linear combos: \( (f+g)'=f'+g' \), \( (c f)'=c f' \).</li>
+        <li><b>Product:</b> \( (fg)'=f'g+fg' \).</li>
+        <li><b>Quotient:</b> \( \left(\dfrac{f}{g}\right)'=\dfrac{f'g-fg'}{g^2} \).</li>
+        <li><b>Chain:</b> \( (f\circ g)'=f'(g(x))\,g'(x) \).</li>
       </ul>
     </div>
 
@@ -66,187 +78,34 @@
       <div>
         <table>
           <tr><th>Algebraic</th><th>Derivative</th></tr>
-          <tr><td>\\(c\\)</td><td>0</td></tr>
-          <tr><td>\\(x\\)</td><td>1</td></tr>
-          <tr><td>\\(x^n\\)</td><td>\\(n x^{n-1}\\)</td></tr>
-          <tr><td>\\([g(x)]^n\\)</td><td>\\(n[g(x)]^{n-1}g'(x)\\)</td></tr>
+          <tr><td>\( c \)</td><td>0</td></tr>
+          <tr><td>\( x \)</td><td>1</td></tr>
+          <tr><td>\( x^n \)</td><td>\( n x^{n-1} \)</td></tr>
+          <tr><td>\( [g(x)]^n \)</td><td>\( n[g(x)]^{n-1}g'(x) \)</td></tr>
         </table>
         <table>
           <tr><th>Exponential</th><th>Derivative</th></tr>
-          <tr><td>\\(e^{x}\\)</td><td>\\(e^{x}\\)</td></tr>
-          <tr><td>\\(e^{r x}\\)</td><td>\\(r e^{r x}\\)</td></tr>
-          <tr><td>\\(a^x\\)</td><td>\\(a^x\\ln a\\)</td></tr>
-          <tr><td>\\(e^{g(x)}\\)</td><td>\\(e^{g(x)} g'(x)\\)</td></tr>
+          <tr><td>\( e^{x} \)</td><td>\( e^{x} \)</td></tr>
+          <tr><td>\( e^{r x} \)</td><td>\( r e^{r x} \)</td></tr>
+          <tr><td>\( a^x \)</td><td>\( a^x\ln a \)</td></tr>
+          <tr><td>\( e^{g(x)} \)</td><td>\( e^{g(x)} g'(x) \)</td></tr>
         </table>
       </div>
       <div>
         <table>
           <tr><th>Logarithmic</th><th>Derivative</th></tr>
-          <tr><td>\\(\\ln x\\)</td><td>\\(1/x\\)</td></tr>
-          <tr><td>\\(\\ln(g(x))\\)</td><td>\\(g'(x)/g(x)\\)</td></tr>
-          <tr><td>\\(\\log_a x\\)</td><td>\\(1/(x\\ln a)\\)</td></tr>
+          <tr><td>\( \ln x \)</td><td>\( 1/x \)</td></tr>
+          <tr><td>\( \ln(g(x)) \)</td><td>\( g'(x)/g(x) \)</td></tr>
+          <tr><td>\( \log_a x \)</td><td>\( 1/(x\ln a) \)</td></tr>
         </table>
         <table>
           <tr><th>Trig / Inverse</th><th>Derivative</th></tr>
-          <tr><td>\\(\\sin x\\)</td><td>\\(\\cos x\\)</td></tr>
-          <tr><td>\\(\\cos x\\)</td><td>\\(-\\sin x\\)</td></tr>
-          <tr><td>\\(\\tan x\\)</td><td>\\(\\sec^2 x\\)</td></tr>
-          <tr><td>\\(\\arctan x\\)</td><td>\\(1/(1+x^2)\\)</td></tr>
+          <tr><td>\( \sin x \)</td><td>\( \cos x \)</td></tr>
+          <tr><td>\( \cos x \)</td><td>\( -\sin x \)</td></tr>
+          <tr><td>\( \tan x \)</td><td>\( \sec^2 x \)</td></tr>
+          <tr><td>\( \arctan x \)</td><td>\( 1/(1+x^2) \)</td></tr>
         </table>
       </div>
-    </div>
-
-    <h2>Rules — English & Mathematical</h2>
-    <h3>Power Rule</h3>
-    <p><b>Math:</b> \\(\\dfrac{d}{dx}(x^n)=n x^{n-1}\\); for \\([g(x)]^n\\): \\(n[g(x)]^{n-1}g'(x)\\).</p>
-    <p><b>English:</b> If you see \\((\\text{stuff})^n\\), differentiate the outer power and multiply by the derivative of the inside.</p>
-
-    <h3>Chain Rule</h3>
-    <p><b>Math:</b> If \\(y=f(g(x))\\), then \\(y'=f'(g(x))g'(x)\\).</p>
-    <p><b>English:</b> For nested functions: outer′(inner) × inner′. Peel layers one by one.</p>
-
-    <h3>Product Rule</h3>
-    <p><b>Math:</b> \\((fg)'=f'g+fg'\\).</p>
-    <p><b>English:</b> Tag the two factors. Differentiate one at a time, then add the terms.</p>
-
-    <h3>Quotient Rule</h3>
-    <p><b>Math:</b> \\(\\left(\\dfrac{f}{g}\\right)'=\\dfrac{f'g-fg'}{g^2}\\).</p>
-    <p><b>English:</b> “low d‑high − high d‑low, over low‑low.” Square the entire denominator.</p>
-
-    <h3>Tangent Line</h3>
-    <p><b>Math:</b> At \\(x=a\\), \\(y-f(a)=f'(a)(x-a)\\).</p>
-    <p><b>English:</b> Compute \\(f(a)\\) and slope \\(f'(a)\\). Use point–slope through \\((a,f(a))\\).</p>
-  </div>
-
-  <div class="page pb" id="page2">
-    <h1>Practice — Questions Only</h1>
-    <p class="muted" style="text-align:center">Use Page 1 to decide the rule. Answers on Page 3.</p>
-    <div class="btns"><a href="#page1">Rules</a><a href="#page2">Questions</a><a href="#page3">Answer Key</a></div>
-
-    <h2>Power</h2>
-    <p class="q"><span class="id">P1.</span> \\(y=x^{7}\\)</p>
-    <p class="q"><span class="id">P2.</span> \\(y=(3x^{2}-5)^{7}\\)</p>
-    <p class="q"><span class="id">P3.</span> \\(y=x^{-\\tfrac{3}{2}}\\)</p>
-
-    <h2>Chain</h2>
-    <p class="q"><span class="id">C1.</span> \\(y=\\sin(3x^{2})\\)</p>
-    <p class="q"><span class="id">C2.</span> \\(y=\\ln\\!\\big((2x-1)^{5}\\big)\\)</p>
-    <p class="q"><span class="id">C3.</span> \\(y=e^{\\,(x^{2}+1)^{5}}\\)</p>
-
-    <h2>Product</h2>
-    <p class="q"><span class="id">PR1.</span> \\(y=(x^{2}+1)\\,\\sin(3x)\\)</p>
-    <p class="q"><span class="id">PR2.</span> \\(y=x^{2}\\,\\ln x\\) (\\(x>0\\))</p>
-
-    <h2>Quotient</h2>
-    <p class="q"><span class="id">Q1.</span> \\(y=\\dfrac{x^{2}+1}{x}\\)</p>
-    <p class="q"><span class="id">Q2.</span> \\(y=\\dfrac{\\ln(3x)}{x^{2}}\\)</p>
-    <p class="q"><span class="id">Q3.</span> \\(y=\\dfrac{e^{2x}}{x^{2}+4}\\)</p>
-
-    <h2>Tangent Line</h2>
-    <p class="q"><span class="id">T1.</span> For \\(f(x)=\\ln(x^{2}+1)\\), find the tangent line at \\(a=0\\).</p>
-    <p class="q"><span class="id">T2.</span> For \\(f(x)=\\sqrt{1+x^{4}}\\), find the tangent line at \\(a=1\\).</p>
-  </div>
-
-  <div class="page pb" id="page3">
-    <h1>Answer Key — Detailed (MathJax)</h1>
-    <p class="muted" style="text-align:center">Format: Problem • Layers/Setup • Work • Final (boxed)</p>
-    <div class="btns"><a href="#page1">Rules</a><a href="#page2">Questions</a><a href="#page3">Answer Key</a></div>
-
-    <h2>Chain (multi-layer example)</h2>
-    <div class="card">
-      <h3>3) Multi-layer (good one)</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y = e^{(x^{2}+1)^{5}}\\)</div>
-      <div class="line"><span class="label">Layers:</span> \\(f(v)=e^{v} \\Rightarrow f'(v)=e^{v};\\; v=(x^{2}+1)^{5} \\Rightarrow v' = 5(x^{2}+1)^{4}\\cdot(2x)\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y' = e^{(x^{2}+1)^{5}}\\cdot (10x(x^{2}+1)^{4}) = \\;<span class="final">10x(x^{2}+1)^{4} e^{(x^{2}+1)^{5}}</span>\\)</div>
-    </div>
-
-    <h2>Power</h2>
-    <div class="card">
-      <h3>P1.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=x^{7}\\)</div>
-      <div class="line"><span class="label">Rule:</span> \\((x^n)'=n x^{n-1}\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y' = 7x^{6} = \\;<span class="final">7x^{6}</span>\\)</div>
-    </div>
-
-    <div class="card">
-      <h3>P2.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=(3x^{2}-5)^{7}\\)</div>
-      <div class="line"><span class="label">Layers:</span> Outer \\(u^{7}\\to 7u^{6}\\); Inner \\(u=3x^{2}-5\\Rightarrow u'=6x\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y'=7(3x^{2}-5)^{6}\\cdot(6x)=\\;<span class="final">42x(3x^{2}-5)^{6}</span>\\)</div>
-    </div>
-
-    <div class="card">
-      <h3>P3.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=x^{-\\tfrac{3}{2}}\\)</div>
-      <div class="line"><span class="label">Rule:</span> \\((x^n)'=n x^{n-1}\\) with \\(n=-\\tfrac{3}{2}\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y' = (-\\tfrac{3}{2})x^{-5/2} = \\;<span class="final">-\\tfrac{3}{2}x^{-5/2}</span>\\)</div>
-    </div>
-
-    <h2>Chain</h2>
-    <div class="card">
-      <h3>C1.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=\\sin(3x^{2})\\)</div>
-      <div class="line"><span class="label">Layers:</span> \\(f(u)=\\sin u\\Rightarrow f'(u)=\\cos u\\); \\(u=3x^{2}\\Rightarrow u'=6x\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y' = \\cos(3x^{2})\\cdot 6x = \\;<span class="final">6x\\cos(3x^{2})</span>\\)</div>
-    </div>
-
-    <div class="card">
-      <h3>C2.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=\\ln((2x-1)^{5})\\)</div>
-      <div class="line"><span class="label">Layers:</span> \\(f(u)=\\ln u\\Rightarrow f'(u)=1/u\\); \\(u=(2x-1)^{5}\\Rightarrow u'=10(2x-1)^{4}\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y' = \\dfrac{1}{(2x-1)^{5}}\\cdot 10(2x-1)^{4} = \\;<span class="final">\\dfrac{10}{2x-1}</span>\\)</div>
-    </div>
-
-    <h2>Product</h2>
-    <div class="card">
-      <h3>PR1.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=(x^{2}+1)\\sin(3x)\\)</div>
-      <div class="line"><span class="label">Setup:</span> \\(f=x^{2}+1\\Rightarrow f'=2x\\); \\(g=\\sin(3x)\\Rightarrow g'=3\\cos(3x)\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y'=f'g+fg' = 2x\\sin(3x) + (x^{2}+1)\\cdot 3\\cos(3x) = \\;<span class="final">2x\\sin(3x)+3(x^{2}+1)\\cos(3x)</span>\\)</div>
-    </div>
-
-    <div class="card">
-      <h3>PR2.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=x^{2}\\ln x\\) (\\(x>0\\))</div>
-      <div class="line"><span class="label">Setup:</span> \\(f=x^{2}\\Rightarrow f'=2x\\); \\(g=\\ln x\\Rightarrow g'=1/x\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y'= 2x\\ln x + x^{2}(1/x) = \\;<span class="final">2x\\ln x + x</span>\\)</div>
-    </div>
-
-    <h2>Quotient</h2>
-    <div class="card">
-      <h3>Q1.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=\\dfrac{x^{2}+1}{x}\\)</div>
-      <div class="line"><span class="label">Setup:</span> \\(f=x^{2}+1\\Rightarrow f'=2x\\); \\(g=x\\Rightarrow g'=1\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y' = \\dfrac{(2x)\\cdot x - (x^{2}+1)\\cdot 1}{x^{2}} = \\;<span class="final">\\dfrac{x^{2}-1}{x^{2}}</span>\\)</div>
-    </div>
-
-    <div class="card">
-      <h3>Q2.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=\\dfrac{\\ln(3x)}{x^{2}}\\)</div>
-      <div class="line"><span class="label">Setup:</span> \\(f=\\ln(3x)\\Rightarrow f'=1/x\\); \\(g=x^{2}\\Rightarrow g'=2x\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y' = \\dfrac{(1/x)\\cdot x^{2} - \\ln(3x)\\cdot 2x}{x^{4}} = \\;<span class="final">\\dfrac{1-2\\ln(3x)}{x^{3}}</span>\\)</div>
-    </div>
-
-    <div class="card">
-      <h3>Q3.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(y=\\dfrac{e^{2x}}{x^{2}+4}\\)</div>
-      <div class="line"><span class="label">Setup:</span> \\(f=e^{2x}\\Rightarrow f'=2e^{2x}\\); \\(g=x^{2}+4\\Rightarrow g'=2x\\)</div>
-      <div class="line work"><span class="label">Work:</span> \\(y' = \\dfrac{(2e^{2x})(x^{2}+4)-e^{2x}(2x)}{(x^{2}+4)^{2}} = \\;<span class="final">\\dfrac{e^{2x}(2x^{2}-2x+8)}{(x^{2}+4)^{2}}</span>\\)</div>
-    </div>
-
-    <h2>Tangent Line</h2>
-    <div class="card">
-      <h3>T1.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(f(x)=\\ln(x^{2}+1),\\; a=0\\)</div>
-      <div class="line"><span class="label">Setup:</span> \\(f(0)=\\ln 1=0\\); \\(f'(x)=\\dfrac{2x}{x^{2}+1}\\Rightarrow f'(0)=0\\)</div>
-      <div class="line work"><span class="label">Work:</span> Line: \\(y-f(a)=f'(a)(x-a)\\Rightarrow y-0=0(x-0)\\Rightarrow \\;<span class="final">y=0</span>\\)</div>
-    </div>
-
-    <div class="card">
-      <h3>T2.</h3>
-      <div class="line"><span class="label">Problem:</span> \\(f(x)=\\sqrt{1+x^{4}},\\; a=1\\)</div>
-      <div class="line"><span class="label">Setup:</span> \\(f(1)=\\sqrt{2}\\); \\(f'(x)=\\dfrac{2x^{3}}{\\sqrt{1+x^{4}}}\\Rightarrow f'(1)=\\sqrt{2}\\)</div>
-      <div class="line work"><span class="label">Work:</span> Line: \\(y-\\sqrt{2}=\\sqrt{2}(x-1)\\Rightarrow \\;<span class="final">y-\\sqrt{2}=\\sqrt{2}(x-1)</span>\\)</div>
     </div>
   </div>
 </body>
