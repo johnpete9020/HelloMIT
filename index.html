@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Calc 1 Quiz Pack — MathJax (Light Mode)</title>
 
-  <!-- ✅ MathJax configuration -->
+  <!-- ✅ MathJax Configuration (working on GitHub Pages) -->
   <script>
   window.MathJax = {
     tex: {
@@ -16,12 +16,11 @@
     svg: { fontCache: 'global' }
   };
   </script>
-
-  <!-- ✅ Reliable MathJax build for GitHub Pages -->
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
   </script>
 
+  <!-- ✅ Light theme styling -->
   <style>
     :root{--bg:#fff;--fg:#101418;--muted:#5a646e;--border:#e6e8eb;--card:#fafbfc;--box:#111}
     *{box-sizing:border-box}
@@ -53,6 +52,7 @@
 </head>
 
 <body>
+  <!-- PAGE 1 -->
   <div class="page" id="page1">
     <h1>Calc 1 — Rule Sheet (MathJax)</h1>
     <p class="muted" style="text-align:center">Basic derivatives • Product • Chain • Quotient • Tangent line</p>
@@ -72,40 +72,49 @@
         <li><b>Chain:</b> \( (f\circ g)'=f'(g(x))\,g'(x) \).</li>
       </ul>
     </div>
+  </div>
 
-    <h2>Basic Derivatives (organized)</h2>
-    <div class="two-col">
-      <div>
-        <table>
-          <tr><th>Algebraic</th><th>Derivative</th></tr>
-          <tr><td>\( c \)</td><td>0</td></tr>
-          <tr><td>\( x \)</td><td>1</td></tr>
-          <tr><td>\( x^n \)</td><td>\( n x^{n-1} \)</td></tr>
-          <tr><td>\( [g(x)]^n \)</td><td>\( n[g(x)]^{n-1}g'(x) \)</td></tr>
-        </table>
-        <table>
-          <tr><th>Exponential</th><th>Derivative</th></tr>
-          <tr><td>\( e^{x} \)</td><td>\( e^{x} \)</td></tr>
-          <tr><td>\( e^{r x} \)</td><td>\( r e^{r x} \)</td></tr>
-          <tr><td>\( a^x \)</td><td>\( a^x\ln a \)</td></tr>
-          <tr><td>\( e^{g(x)} \)</td><td>\( e^{g(x)} g'(x) \)</td></tr>
-        </table>
-      </div>
-      <div>
-        <table>
-          <tr><th>Logarithmic</th><th>Derivative</th></tr>
-          <tr><td>\( \ln x \)</td><td>\( 1/x \)</td></tr>
-          <tr><td>\( \ln(g(x)) \)</td><td>\( g'(x)/g(x) \)</td></tr>
-          <tr><td>\( \log_a x \)</td><td>\( 1/(x\ln a) \)</td></tr>
-        </table>
-        <table>
-          <tr><th>Trig / Inverse</th><th>Derivative</th></tr>
-          <tr><td>\( \sin x \)</td><td>\( \cos x \)</td></tr>
-          <tr><td>\( \cos x \)</td><td>\( -\sin x \)</td></tr>
-          <tr><td>\( \tan x \)</td><td>\( \sec^2 x \)</td></tr>
-          <tr><td>\( \arctan x \)</td><td>\( 1/(1+x^2) \)</td></tr>
-        </table>
-      </div>
+  <!-- PAGE 2 -->
+  <div class="page pb" id="page2">
+    <h1>Practice — Questions Only</h1>
+    <p class="muted" style="text-align:center">Use Page 1 to decide the rule. Answers on Page 3.</p>
+    <div class="btns"><a href="#page1">Rules</a><a href="#page2">Questions</a><a href="#page3">Answer Key</a></div>
+
+    <h2>Power</h2>
+    <p class="q"><span class="id">P1.</span> \(y=x^{7}\)</p>
+    <p class="q"><span class="id">P2.</span> \(y=(3x^{2}-5)^{7}\)</p>
+    <p class="q"><span class="id">P3.</span> \(y=x^{-\tfrac{3}{2}}\)</p>
+
+    <h2>Chain</h2>
+    <p class="q"><span class="id">C1.</span> \(y=\sin(3x^{2})\)</p>
+    <p class="q"><span class="id">C2.</span> \(y=\ln((2x-1)^{5})\)</p>
+    <p class="q"><span class="id">C3.</span> \(y=e^{(x^{2}+1)^{5}}\)</p>
+
+    <h2>Product</h2>
+    <p class="q"><span class="id">PR1.</span> \(y=(x^{2}+1)\sin(3x)\)</p>
+    <p class="q"><span class="id">PR2.</span> \(y=x^{2}\ln x\) (\(x>0\))</p>
+
+    <h2>Quotient</h2>
+    <p class="q"><span class="id">Q1.</span> \(y=\dfrac{x^{2}+1}{x}\)</p>
+    <p class="q"><span class="id">Q2.</span> \(y=\dfrac{\ln(3x)}{x^{2}}\)</p>
+    <p class="q"><span class="id">Q3.</span> \(y=\dfrac{e^{2x}}{x^{2}+4}\)</p>
+
+    <h2>Tangent Line</h2>
+    <p class="q"><span class="id">T1.</span> For \(f(x)=\ln(x^{2}+1)\), find the tangent line at \(a=0\).</p>
+    <p class="q"><span class="id">T2.</span> For \(f(x)=\sqrt{1+x^{4}}\), find the tangent line at \(a=1\).</p>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page pb" id="page3">
+    <h1>Answer Key — Detailed (MathJax)</h1>
+    <p class="muted" style="text-align:center">Format: Problem • Layers/Setup • Work • Final (boxed)</p>
+    <div class="btns"><a href="#page1">Rules</a><a href="#page2">Questions</a><a href="#page3">Answer Key</a></div>
+
+    <h2>Example — Chain Rule</h2>
+    <div class="card">
+      <h3>C3.</h3>
+      <div class="line"><span class="label">Problem:</span> \(y = e^{(x^{2}+1)^{5}}\)</div>
+      <div class="line work"><span class="label">Work:</span> \(y' = e^{(x^{2}+1)^{5}}\cdot(10x(x^{2}+1)^{4}) = \;<span class="final">10x(x^{2}+1)^{4} e^{(x^{2}+1)^{5}}</span>\)</div>
     </div>
   </div>
 </body>
